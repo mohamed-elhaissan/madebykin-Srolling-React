@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Acwa';
+  src: url('../src/font/stonehen.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Acwa';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #fff;
+  background-color: black;
+}
+h1 {
+  font-size: 50px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+.menu span {
+  display: inline-block;
+  height: 3px;
+  margin: 2px 0px;
+  width: 40px;
+  border-radius: 100px;
+  background-color: #fff;
+}
