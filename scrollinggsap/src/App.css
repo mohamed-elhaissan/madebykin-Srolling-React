@@ -28,6 +28,7 @@ header {
   display: flex;
   cursor: pointer;
   flex-direction: column;
+  z-index: 100;
 }
 .menu span {
   display: inline-block;
@@ -36,4 +37,26 @@ header {
   width: 40px;
   border-radius: 100px;
   background-color: #fff;
+  border: 1px solid black;
+}
+.leftSide{
+  position: absolute;
+  width: 50%;
+  left: 100%;
+  display: flex;
+  font-size: 40px;
+  height: 100vh;
+  color: black;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 40px;
+  align-items: flex-start;
+  top: 0;
+  background-color: #eee;
+}
+body{
+  overflow-x: hidden;
+}
+.leftSide h2 {
+  cursor: pointer;
 }
