@@ -1,96 +1,96 @@
-import "../../src/App.css";
-import { useState, useRef } from "react";
-import gsap from "gsap";
-
-export default function HeaderSection() {
-  const [Firstspan, setFirstSpan] = useState(0);
-  const [opacity, setOpacity] = useState(1);
-  const [translateY, setTranslateX] = useState(0);
-  const [rotatingMen, setRotatingMenu] = useState(0);
-  const menuAnimation = useRef(null);
-
-  let animated = false;
-  function animtedMenu() {
-    if (!animated) {
-      setFirstSpan(45);
-      setOpacity(0);
-      setTranslateX(-10);
-      setRotatingMenu(360);
-      animated = true;
-      gsap.to(menuAnimation.current, {
-        opacity: 1,
-        ease: "power4",
-        x: "-100%",
-      });
-      gsap.to(menuAnimation.current.children, {
-        opacity: 1,
-        y: 0,
-        ease: "power4",
-        duration: 1,
-        stagger: {
-          amount: 1,
-          from: "top",
-        },
-      });
-    } else {
-      setFirstSpan(0);
-      setOpacity(1);
-      setTranslateX(0);
-      setRotatingMenu(0);
-      animated = false;
-      gsap.to(menuAnimation.current, {
-        opacity: 0,
-        ease: "power4",
-        x: 500,
-      });
-      gsap.to(menuAnimation.current.children, {
-        opacity: 0,
-        y: -100,
-        ease: "power4",
-        duration: 1,
-        stagger: {
-          amount: 1,
-          from: "top",
-        },
-      });
-    }
-  }
+import "../App.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+const Nav = () => {
+  const [show, setShow] = useState(false);
   return (
-    <header>
-      <h1>Cases</h1>
-      <div
-        class="menu"
-        onClick={animtedMenu}
-        style={{
-          transform: `rotate(${rotatingMen}deg)`,
-          transition: "all .6s ease",
-        }}
-      >
-        <span
+    <div className="nav">
+      <div className="nav-container">
+        <div className="navbar">
+          <div className="logo-container">SCROLLING</div>
+          <div
+            className="menu-toggle"
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            <div className={show ? "hamBox homBoxOpen" : "hamBox"}>
+              <span className={show ? "lineTop spin" : "lineTop"}></span>
+              <span className={show ? "lineBottom spin" : "lineBottom"}></span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="nav-overlay"
           style={{
-            transform: `rotate(${Firstspan}deg)`,
-            transition: "all .4s ease",
+            top: show ? "0" : "-100%",
           }}
-        ></span>
-        <span
-          style={{
-            opacity: `${opacity}`,
-            transition: "all .3s ease",
-          }}
-        ></span>
-        <span
-          style={{
-            transform: `rotate(-${Firstspan}deg) translateY(${translateY}px)`,
-            transition: "all .4s ease",
-          }}
-        ></span>
+        >
+          <ul className="nav-links">
+            <li className="nav-link">
+              <Link
+                to="/home"
+                onClick={() => {
+                  setShow(!show);
+                }}
+                style={{
+                  opacity: show ? 1 : 0,
+                  top: show ? 0 : "120px",
+                  transitionDelay : show ? "0.8s" : "0s"
+                }}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link
+                to="/project"
+                onClick={() => {
+                  setShow(!show);
+                }}
+                style={{
+                  opacity: show ? 1 : 0,
+                  top: show ? 0 : "120px",
+                  transitionDelay : show ? "1s" : "0s"
+                }}
+              >
+                Poject
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link
+                to="/about"
+                onClick={() => {
+                  setShow(!show);
+                }}
+                style={{
+                  opacity: show ? 1 : 0,
+                  top: show ? 0 : "120px",
+                  transitionDelay : show ? "1.2s" :" 0s"
+                }}
+              >
+                About
+              </Link>
+            </li>
+            <li className="nav-link">
+              <Link
+                to="/contact"
+                onClick={() => {
+                  setShow(!show);
+                }}
+                style={{
+                  opacity: show ? 1 : 0,
+                  top: show ? 0 : "120px",
+                  transitionDelay : show ? "1.4s" : "0s"
+                }}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="leftSide" ref={menuAnimation}>
-        <h2>HOME</h2>
-        <h2>ABOUT</h2>
-        <h2>CONTACT</h2>
-        <h2>GITHUB</h2>
-      </div>
-    </header>
+    </div>
   );
-}
+};
+export default Nav;

@@ -11,52 +11,118 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  color: #fff;
-  background-color: black;
+  background: #0d0d11;
+  color: #eee;
 }
 h1 {
-  font-size: 50px;
+  font-size: 2em;
 }
-header {
+.nav {
+  position: fixed;
+  z-index: 2;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 50px;
   align-items: center;
+  padding: 2em;
 }
-.menu {
-  display: flex;
-  cursor: pointer;
-  flex-direction: column;
-  z-index: 100;
+
+.logo-container {
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.menu span {
-  display: inline-block;
-  height: 3px;
-  margin: 2px 0px;
-  width: 40px;
-  border-radius: 100px;
-  background-color: #fff;
-  border: 1px solid black;
-}
-.leftSide{
-  position: absolute;
+
+.nav-overlay {
+  position: fixed;
   width: 100%;
-  left: 100%;
-  display: flex;
-  font-size: 40px;
   height: 100vh;
-  color: black;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 40px;
-  align-items: flex-start;
-  top: 0;
-  background-color: #eee;
+  z-index: -2;
+  left: 0;
+  top: -100%;
+  overflow: hidden;
+  padding: 4em;
+  background: #18181c;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-body{
-  overflow-x: hidden;
-}
-.leftSide h2 {
+
+.hamBox {
+  position: relative;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
+  border-radius: 50%;
+  transition: .3s ease;
+  padding: 2.4em;
+}
+
+.hamBox:hover {
+  background: #2a2a2f;
+}
+
+.homBoxOpen {
+  background: #2a2a2f;
+}
+
+.lineTop,
+.lineBottom {
+  position: absolute;
+  margin: 0 auto;
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+  left: 0;
+  right: 0;
+  transform: rotate(0deg);
+  transition: all .4s ease;
+}
+
+.lineTop {
+  top: 2.2em;
+}
+
+.lineBottom {
+  bottom: 2.2em;
+}
+.lineTop.spin {
+  top: 2.3em;
+  transform: rotate(135deg);
+  background-color: #fff;
+}
+.lineBottom.spin {
+  bottom: 2.3em;
+  transform: rotate(225deg);
+  background-color: #fff;
+}
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  list-style: none;
+  text-align: center;
+  font-size: 80px;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #eee;
+  opacity: .9;
+  position: relative;
+  bottom: -20px;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  text-transform: uppercase;
+}
+a:hover {
+  color: #fff;
 }

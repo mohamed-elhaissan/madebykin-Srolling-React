@@ -1,8 +1,8 @@
 import './App.css';
-import HeaderSection from './componants/header';
+import Nav from './componants/header';
 function App() {
   return (
-    <HeaderSection />
+    <Nav />
   );
 }
 
