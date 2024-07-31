@@ -41,7 +41,7 @@ header {
 }
 .leftSide{
   position: absolute;
-  width: 50%;
+  width: 100%;
   left: 100%;
   display: flex;
   font-size: 40px;

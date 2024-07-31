@@ -20,7 +20,7 @@ export default function HeaderSection() {
       gsap.to(menuAnimation.current, {
         opacity: 1,
         ease: "power4",
-        x: -500,
+        x: "-100%",
       });
       gsap.to(menuAnimation.current.children, {
         opacity: 1,
