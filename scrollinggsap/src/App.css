@@ -1,8 +1,15 @@
 @font-face {
   font-family: 'Acwa';
-  src: url('../src/font/stonehen.ttf') format('woff2');
+  src: url('../src/font/Recoleta-Light.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --gray: #eee;
+  --background: #2a2a2f;
 }
 
 * {
@@ -14,11 +21,13 @@
 
 body {
   background: #0d0d11;
-  color: #eee;
+  color: var(--gray);
 }
+
 h1 {
   font-size: 2em;
 }
+
 .nav {
   position: fixed;
   z-index: 2;
@@ -37,7 +46,7 @@ h1 {
 
 .logo-container {
   font-weight: bold;
-  text-transform: uppercase;
+  font-size: 30px;
 }
 
 .nav-overlay {
@@ -64,11 +73,11 @@ h1 {
 }
 
 .hamBox:hover {
-  background: #2a2a2f;
+  background: var(--background);
 }
 
 .homBoxOpen {
-  background: #2a2a2f;
+  background: var(--background);
 }
 
 .lineTop,
@@ -93,29 +102,33 @@ h1 {
 .lineBottom {
   bottom: 2.2em;
 }
+
 .lineTop.spin {
   top: 2.3em;
   transform: rotate(135deg);
-  background-color: #fff;
+  background-color: var(--white);
 }
+
 .lineBottom.spin {
   bottom: 2.3em;
   transform: rotate(225deg);
   background-color: #fff;
 }
+
 ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
   font-size: 80px;
-  color: #fff;
+  color: var(--white);
 }
+
 a {
   text-decoration: none;
-  color: #eee;
+  color: var(--gray);
   opacity: .9;
   position: relative;
   bottom: -20px;
@@ -123,6 +136,29 @@ a {
   opacity: 0;
   text-transform: uppercase;
 }
+
 a:hover {
-  color: #fff;
+  color: var(--white);
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container p {
+  font-size: 28px;
+}
+.container h2 {
+  font-size: 120px;
+}
+.main {
+  text-align: center;
+  position: absolute;
+  
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
 }

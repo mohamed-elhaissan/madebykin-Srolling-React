@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="nav">
       <div className="nav-container">
         <div className="navbar">
-          <div className="logo-container">SCROLLING</div>
+          <div className="logo-container">Mohamed</div>
           <div
             className="menu-toggle"
             onClick={() => {
@@ -36,7 +36,7 @@ const Nav = () => {
                 style={{
                   opacity: show ? 1 : 0,
                   top: show ? 0 : "120px",
-                  transitionDelay : show ? "0.8s" : "0s"
+                  transitionDelay: show ? "0.8s" : "0s",
                 }}
               >
                 Home
@@ -51,7 +51,7 @@ const Nav = () => {
                 style={{
                   opacity: show ? 1 : 0,
                   top: show ? 0 : "120px",
-                  transitionDelay : show ? "1s" : "0s"
+                  transitionDelay: show ? "1s" : "0s",
                 }}
               >
                 Poject
@@ -66,7 +66,7 @@ const Nav = () => {
                 style={{
                   opacity: show ? 1 : 0,
                   top: show ? 0 : "120px",
-                  transitionDelay : show ? "1.2s" :" 0s"
+                  transitionDelay: show ? "1.2s" : " 0s",
                 }}
               >
                 About
@@ -81,7 +81,7 @@ const Nav = () => {
                 style={{
                   opacity: show ? 1 : 0,
                   top: show ? 0 : "120px",
-                  transitionDelay : show ? "1.4s" : "0s"
+                  transitionDelay: show ? "1.4s" : "0s",
                 }}
               >
                 Contact
